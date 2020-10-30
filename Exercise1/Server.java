@@ -6,13 +6,33 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/*
+ * Server class for implementing the server side of the code.
+ * 
+ * It waits for the user input and runs until user inputs 'QUIT'.
+ */ 
 public class Server {
 	
+	/**
+	 * aSocket is of type Socket that actually facilitates the communication
+	 */
 	private Socket aSocket;
+	/**
+	 * serverSocket creates a ServerSocket object, indicating a port number that is not used by other servers
+	 */
 	private ServerSocket serverSocket;
+	/**
+	 * socketOut is of type PrintWriter for providing the output to the socket 
+	 */
 	private PrintWriter socketOut;
+	/**
+	 * socketIn is of type BufferedReader for reading from the Socket
+	 */
 	private BufferedReader socketIn;
 
+	/**
+	 * Constructs a constructor of class Server, which assigns the port number to the serverSocket.
+	 */
 	public Server() {
 		try {
 			serverSocket = new ServerSocket(8099);
@@ -21,7 +41,14 @@ public class Server {
 			e.printStackTrace();
 		}
 	}
-
+	
+	
+	
+	/**
+	 * isPalindrome() reads the output from the socket, and checks if the read number is Palindrome or not.
+	 * 
+	 * After checking it writes the output to the socket. 
+	 */
 	public void isPalindrome() {
 		String line = null;
 		while (true) {
@@ -55,7 +82,6 @@ public class Server {
 		        if (flag)
 		        	socketOut.println(line + " is palindrome");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} // reading from the client
 
