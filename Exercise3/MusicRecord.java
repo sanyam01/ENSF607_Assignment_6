@@ -1,14 +1,18 @@
+import java.io.Serializable;
 
 /**
  *   A simple class that represents a music record
  *
  */
-class MusicRecord
+class MusicRecord implements Serializable
 	{
+	
+	static final long serialVersionUID = 1L;
 		private int year_recorded;
 		private String songName;
 		private String singerName;
 		private double purchase_price;
+		
 		
         /**
          * A default constructor that builds a record with blank data
