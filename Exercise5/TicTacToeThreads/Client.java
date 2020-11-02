@@ -16,6 +16,7 @@ public class Client implements Constants {
 	private GameView theView;
 	private int choice;
 	private Boolean isConnected = false;
+	private ClientController theController;
 
 
     /**
@@ -24,8 +25,9 @@ public class Client implements Constants {
      * @param portNumber
      * @param theView
      */
-	public Client(String serverName, int portNumber, GameView theView) {
-		this.theView = theView;
+	public Client(String serverName, int portNumber) {
+		this.theView = new GameView();
+		theController = new ClientController(this.theView);
 		try {
 			aSocket = new Socket(serverName, portNumber);
 			isConnected = true;
@@ -169,22 +171,21 @@ public class Client implements Constants {
 			case 1:
 				//Set players
 				setPlayer(response);
-				//Set name by taking the data from the GUI itself as we have received an ack from server
+				//Set name by taking the data from the GUI itself as we have received back from server
 				theView.setPlayerName(theView.getName());
 				break;
-			case 2:
-				//Set player names
-				break;
+
 			case 3:
 				//Make move
 				String [] message2 = response.split(",");
 				theView.setMessageArea(message2[1]);
-
-				ClientController temp = new ClientController(theView);
-				while((temp.getRowColData()[0] == -1)){
+				
+				int[] check = {-1, -1};
+				theController.setRowColData(check);
+				while((theController.getRowColData()[0] == -1)){
 					System.out.println("Entered case 3 while loop");
 				}
-				sendButtonPress(temp.getRowColData()[0],temp.getRowColData()[1]);
+				sendButtonPress(theController.getRowColData()[0],theController.getRowColData()[1]);
 				break;
 			case 4:
 			    //Set mark on GUI
@@ -221,11 +222,8 @@ public class Client implements Constants {
 	}
 	
 	public static void main(String[] args) throws IOException {
-		GameView theView = new GameView();
-		Client theClient = new Client("localhost", 9090, theView);
-		ClientController theController = new ClientController(theView);
-		theView.setVisible(true);
-		theView.pack();
+		
+		Client theClient = new Client("localhost", 9090);
 		theClient.getServerResponse();
 	}
 }

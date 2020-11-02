@@ -28,10 +28,10 @@ public class Game implements Runnable, Constants {
 	 * @param oSocket
 	 * @param theBoard
 	 */
-	public Game(Socket xSocket, Socket oSocket, Board theBoard) {
+	public Game(Socket xSocket, Socket oSocket) {
 		this.xSocket = xSocket;
 		this.oSocket = oSocket;
-		this.theBoard = theBoard;
+		this.theBoard = new Board();
 		createPlayers();
 	}
 

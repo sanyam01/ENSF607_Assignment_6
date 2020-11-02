@@ -2,12 +2,11 @@
 
 //on server
 
-
 /**
  * Class displays the board, adds X or O marks to the board when player plays,
  * checks for the winner, and alerts the players when the board is full.
  * 
- * @author Neha Singh
+ * @author Neha Singh, Sanyam
  * @version 1.0
  *
  */

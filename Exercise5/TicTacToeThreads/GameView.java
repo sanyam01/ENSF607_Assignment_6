@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
  * View class that is responsible for the GUI
  */
 public class GameView extends JFrame {
+	
     private JPanel mainPanel; // main Panel which contains additional sub-panels
     private JPanel boardPanel; // Panel containing the Board
     private JPanel textPanel; // Panel containing the messageArea, PlayerSymbol and PlayerName
@@ -22,6 +23,17 @@ public class GameView extends JFrame {
     private String nameX;
     private String nameO;
     private String name;
+    
+    /**
+     * View Constructor that is responsible for accepting user input and creates the frame.
+     */
+    public GameView(){
+    	this.setVisible(true);
+    	this.pack();
+        playerNameInput();
+        createGameWindow();
+        
+    }
 
 
     /**
@@ -47,13 +59,7 @@ public class GameView extends JFrame {
         return nameO;
     }
 
-    /**
-     * View Constructor that is responsible for accepting user input and creates the frame.
-     */
-    public GameView(){
-        playerNameInput();
-        createGameWindow();
-    }
+    
 
     /**
      * Returns the Button
@@ -195,16 +201,5 @@ public class GameView extends JFrame {
      * Updates the board after reading board object from server
      * @param theBoard
      */
-//    public void updateBoard(Board theBoard){
-//        for(int i=0;i<3;i++){
-//            for(int j=0;j<3;j++){
-//                if(theBoard.getMark(i,j) == Constants.LETTER_X){
-//                    button[i][j].setText("x");
-//                }
-//                else if(theBoard.getMark(i,j) == Constants.LETTER_O){
-//                    button[i][j].setText("o");
-//                }
-//            }
-//        }
-//}
+
 }

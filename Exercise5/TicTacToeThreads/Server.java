@@ -19,7 +19,7 @@ public class Server implements Constants {
 
 	private ServerSocket serverSocket;
 	private ExecutorService pool;
-	private Board theBoard;
+	//private Board theBoard;
 
 	public Server() {
 		try {
@@ -46,9 +46,9 @@ public class Server implements Constants {
 
 				oSocket = serverSocket.accept();
 				System.out.println("Accepted oPlayer");
-				theBoard = new Board();
+				//theBoard = new Board();
 
-				Game theGame = new Game(xSocket, oSocket, theBoard);
+				Game theGame = new Game(xSocket, oSocket);
 				pool.execute(theGame);
 			}
 

@@ -9,14 +9,6 @@ public class ClientController implements Constants {
 	private int [] rowColData;
 
 	/**
-	 * Getter for the matrix consisting of the button press row and column values
-	 * @return
-	 */
-	public int[] getRowColData() {
-		return rowColData;
-	}
-
-	/**
 	 * Constructor
 	 * @param theView
 	 */
@@ -29,6 +21,24 @@ public class ClientController implements Constants {
 		rowColData[0] = -1;
 		rowColData[1] = -1;
 	}
+	
+	/**
+	 * Getter for the matrix consisting of the button press row and column values
+	 * @return
+	 */
+	public int[] getRowColData() {
+		return rowColData;
+	}
+	
+
+	public void setTheView(GameView theView) {
+		this.theView = theView;
+	}
+
+	public void setRowColData(int[] rowColData) {
+		this.rowColData = rowColData;
+	}
+
 
 	/**
 	 * Action listener for the Game buttons
