@@ -1,5 +1,5 @@
 /**
- * Defines the constants which are going to be used in the game
+ * Defines the constants which are going to be used in the game.
  */
 public interface Constants {
 	static final char SPACE_CHAR = ' ';
