@@ -1,4 +1,3 @@
-package TicTacToeThreads;
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.PrintWriter;

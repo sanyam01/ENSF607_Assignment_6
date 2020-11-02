@@ -1,4 +1,3 @@
-package TicTacToeThreads;
 //server Side
 
 import java.io.BufferedReader;

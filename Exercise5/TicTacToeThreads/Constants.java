@@ -1,4 +1,3 @@
-package TicTacToeThreads;
 /**
  * Defines the constants which are going to be used in the game
  */

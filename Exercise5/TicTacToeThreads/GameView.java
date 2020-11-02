@@ -1,4 +1,3 @@
-package TicTacToeThreads;
 
 import javax.swing.*;
 import java.awt.*;
