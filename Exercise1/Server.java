@@ -6,10 +6,15 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-/*
- * Server class for implementing the server side of the code.
+/**
+ * Server class for implementing the server side of the code
  * 
- * It waits for the user input and runs until user inputs 'QUIT'.
+ * It waits for the user input from the Client and returns a string representing if the entered string is palindrome or not
+ * 
+ * It runs until user inputs 'QUIT'
+ * 
+ * @author Sanyam, Neha
+ *
  */
 public class Server {
 
@@ -94,8 +99,8 @@ public class Server {
 		Server myServer = new Server();
 		// establishing connection
 		try {
-			myServer.aSocket = myServer.serverSocket.accept();
 			System.out.println("Server is now running");
+			myServer.aSocket = myServer.serverSocket.accept();
 			// for reading
 			myServer.socketIn = new BufferedReader(new InputStreamReader(myServer.aSocket.getInputStream()));
 			myServer.socketOut = new PrintWriter(myServer.aSocket.getOutputStream(), true);
