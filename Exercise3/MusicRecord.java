@@ -2,12 +2,14 @@ import java.io.Serializable;
 
 /**
  *   A simple class that represents a music record
+ *   
+ *   Music Record implements the Serializable in order to read and write the content of MusicRecod to a file
  *
  */
 class MusicRecord implements Serializable
 	{
 	
-	static final long serialVersionUID = 1L;
+		static final long serialVersionUID = 1L;
 		private int year_recorded;
 		private String songName;
 		private String singerName;

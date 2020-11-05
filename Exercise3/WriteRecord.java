@@ -1,8 +1,11 @@
 
 /**
+ * 
+ * WriteRecord writes the contents of MusicRecord to the .ser file
+ * 
  * Started by M. Moussavi
  * March 2015
- * Completed by: STUDENT(S) NAME
+ * Completed by: Sanyam, Neha
  */
 
 import java.io.File;
@@ -18,8 +21,17 @@ import java.util.Scanner;
 public class WriteRecord {
 
 	ObjectOutputStream objectOut = null;
+	/**
+	 * record represents an object of type MusicRecord
+	 */
 	MusicRecord record = null;
+	/**
+	 * stdin an object of class Scanner
+	 */
 	Scanner stdin = null;
+	/**
+	 * textFileIn is for reading the file
+	 */
 	Scanner textFileIn = null;
 
 	/**
