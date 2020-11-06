@@ -4,13 +4,13 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class Client {
+public class SimpleClient {
 	private PrintWriter socketOut;
 	private Socket palinSocket;
 	private BufferedReader stdIn;
 	private BufferedReader socketIn;
 
-	public Client(String serverName, int portNumber) {
+	public SimpleClient(String serverName, int portNumber) {
 		try {
 			palinSocket = new Socket(serverName, portNumber);
 			stdIn = new BufferedReader(new InputStreamReader(System.in));
@@ -55,7 +55,7 @@ public class Client {
 	}
 
 	public static void main(String[] args) throws IOException  {
-		Client aClient = new Client("localhost", 8099);
+		SimpleClient aClient = new SimpleClient("localhost", 8099);
 		aClient.communicate();
 	}
 }

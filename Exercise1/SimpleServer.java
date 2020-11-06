@@ -16,7 +16,7 @@ import java.net.Socket;
  * @author Sanyam, Neha
  *
  */
-public class Server {
+public class SimpleServer {
 
 	/**
 	 * aSocket is of type Socket that actually facilitates the communication
@@ -40,7 +40,7 @@ public class Server {
 	 * Constructs a constructor of class Server, which assigns the port number to
 	 * the serverSocket.
 	 */
-	public Server() {
+	public SimpleServer() {
 		try {
 			serverSocket = new ServerSocket(8099);
 
@@ -96,7 +96,7 @@ public class Server {
 
 	public static void main(String[] args) throws IOException {
 
-		Server myServer = new Server();
+		SimpleServer myServer = new SimpleServer();
 		// establishing connection
 		try {
 			System.out.println("Server is now running");
