@@ -1,4 +1,4 @@
-
+package Client;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -184,6 +184,8 @@ public class Client implements Constants {
 				theController.setRowColData(check);
 				while((theController.getRowColData()[0] == -1)){
 					System.out.println("Entered case 3 while loop");
+					//waiting for player to make move
+//					continue;
 				}
 				sendButtonPress(theController.getRowColData()[0],theController.getRowColData()[1]);
 				break;
@@ -223,7 +225,10 @@ public class Client implements Constants {
 	
 	public static void main(String[] args) throws IOException {
 		
-		Client theClient = new Client("localhost", 9090);
+		Client theClient = new Client("3.87.21.192", 9090);
+		
+		theClient.theView.setVisible(true);
+		theClient.theView.pack();
 		theClient.getServerResponse();
 	}
 }

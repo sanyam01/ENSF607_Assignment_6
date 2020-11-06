@@ -1,4 +1,4 @@
-
+package Client;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -28,8 +28,8 @@ public class GameView extends JFrame {
      * View Constructor that is responsible for accepting user input and creates the frame.
      */
     public GameView(){
-    	this.setVisible(true);
-    	this.pack();
+//    	this.setVisible(true);
+//    	this.pack();
         playerNameInput();
         createGameWindow();
         

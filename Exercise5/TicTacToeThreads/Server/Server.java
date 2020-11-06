@@ -1,4 +1,4 @@
-
+package Server;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -6,6 +6,8 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import Server.Game;
 
 public class Server implements Constants {
 	// X sockets

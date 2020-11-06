@@ -1,4 +1,4 @@
-
+package Server;
 
 /**
  * Class assigns players and their opponents. Takes mark from the player,
