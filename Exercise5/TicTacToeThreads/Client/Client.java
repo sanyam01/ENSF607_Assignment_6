@@ -225,7 +225,8 @@ public class Client implements Constants {
 	
 	public static void main(String[] args) throws IOException {
 		
-		Client theClient = new Client("3.87.21.192", 9090);
+//		Client theClient = new Client("3.87.21.192", 9090); //for exercise 5
+		Client theClient = new Client("localhost", 9090); //for exercise4
 		
 		theClient.theView.setVisible(true);
 		theClient.theView.pack();
